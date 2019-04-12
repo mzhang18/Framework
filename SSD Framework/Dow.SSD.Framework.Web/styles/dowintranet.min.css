@@ -1,0 +1,384 @@
+﻿/*
+ * @title: Dow Intranet (Responsive) CSS
+ * @version: 1.0.0.0 (1-Oct-2015)
+ * @copyright: Dual licensed under DOW licenses
+*/
+@font-face {
+    font-family: 'DowScript-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/DowScript-Regular.eot');
+    src: url('../fonts/DowScript-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/DowScript-Regular.woff') format('woff'), url('../fonts/DowScript-Regular.ttf') format('truetype'), url('../fonts/DowScript-Regular.svg#DowScript-Regular') format('svg');
+}
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: normal;
+    background: none !important;
+    margin-bottom: 60px;
+}
+
+html,
+body {
+    overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+
+a, a:link, a:visited {
+    color: #666;
+    text-decoration: none;
+}
+
+    a:hover, a:active, a.actived {
+        color: #E80033;
+        text-decoration: underline;
+    }
+
+    a img {
+        border: none;
+    }
+
+input, textarea, select {
+    color: #e80033;
+    border: none;
+    background-color: #EDEDED;
+    margin: 5px 0;
+    padding: 6px;
+    position: relative;
+    display: inline-block;
+}
+
+/*header*/
+.navbar-default {
+    background-color: #FFF;
+    border-color: #FFF;
+}
+
+.navbar {
+    margin: 0px;
+    border: none;
+}
+
+    .navbar > .container > .navbar-logo {
+        height: 65px;
+    }
+
+    .navbar .logo {
+        width: 110px;
+        height: 65px;
+        background-image: url('../images/dowlogo.png');
+    }
+
+        .navbar .logo a {
+            width: 110px;
+            height: 45px;
+            float: left;
+            position: relative;
+            top: 10px;
+            display: inline-block;
+        }
+
+    .navbar .sitetitle {
+        font-weight: bold;
+        font-size: 1.9em;
+        width: 250px;
+        height: 65px;
+        color: #E80033;
+        line-height: 65px;
+        text-align: left;
+        padding: 0px 10px 0px 20px;
+        overflow: hidden;
+    }
+
+    .navbar .searchbox {
+        width: 330px;
+        padding-top: 20px;
+        text-align: right;
+        display: block;
+    }
+
+        .navbar .searchbox > span {
+            font-size: 8pt;
+            line-height: 12px;
+            text-align: right;
+        }
+
+            .navbar .searchbox > span a {
+                color: #000;
+                text-decoration: underline;
+            }
+
+        .navbar .searchbox > form {
+            height: 25px;
+            display: inline-block;
+        }
+
+        .navbar .searchbox input {
+            width: 210px;
+            height: 25px;
+            font-size: 11px;
+            color: #666;
+            border: none;
+            margin: 0px 0px 0px 5px;
+            padding: 6px;
+            display: inline-block;
+        }
+
+        .navbar .searchbox #searchIntranet {
+            width: 25px;
+            height: 25px;
+            background-image: url('../images/buttons/searchIntranet.jpg');
+            background-position: center 0;
+            background-repeat: no-repeat;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+            .navbar .searchbox #searchIntranet:hover {
+                background-position: center -25px;
+            }
+
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+    max-height: 100%;
+}
+
+.navbar-collapse {
+    border-top: none;
+    border-bottom: 1px solid #E7E7E7;
+}
+.nav {
+    font-family: 'Segoe UI', Segoe, Tahoma, Arial, sans-serif;
+    font-size: 13px;
+}
+.dropdown-menu {
+    border-radius: 0px;
+}
+
+    .dropdown-menu > li > a:hover {
+        color: #FFF;
+        background-color: #E80033;
+    }
+
+/*end of header*/
+
+
+/*left nav*/
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    z-index: 2;
+    color: #fff;
+    background-color: #E80033;
+    border-color: #E80033;
+}
+
+.btn-primary, .btn-primary:visited, .btn-primary:focus {
+    background-color: #E80033 !important;
+    border-color: #E80033 !important;
+    color: #fff !important;
+    outline: none !important;
+}
+
+.btn-primary:hover, .btn-primary:active {
+        background-color: #BB0029!important;
+        border-color: #E80029 !important;
+}
+/*end of left nav*/
+
+/*content*/
+body > .content {
+    padding: 105px 15px 15px;
+}
+
+    body > .content > h1 {
+	    font-size: 22px;font-weight: bold;color: #000;line-height: 28px;margin: 0px;
+    }
+    body > .content > h2 {
+    	font-size: 20px;font-weight: bold;color: #000;line-height: 24px;margin: 0px;
+    }
+    body > .content > h3 {
+	    font-size: 14px;font-weight: bold;color: #000;line-height: 16px;margin: 0px;
+    }
+    body > .content > h4 {
+	    font-size: 13px;font-weight: bold;color: #000;line-height: 15px;margin: 0px;
+    }
+    body > .content > p {
+	    font-size: 12px;font-weight: bold;color: #000;line-height: 16px;margin: 0px;
+    }
+
+.input-sm {
+    border-radius: 0px;
+    height: 25px !important;
+}
+
+.table-responsive {
+    overflow-x: hidden;
+}
+
+.form-control:focus {
+        border: 2px solid #BFBFBF;
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+}
+
+option:checked {
+    color: #FFF !important;
+    background-color: #E80033 !important; 
+}
+
+.progress-bar {
+    background-color: #808080;
+}
+
+.scroll-to-top {
+    position: fixed; 
+    bottom: 30px; 
+    right: 5px;
+    z-index: 2;
+}
+
+/*end of content*/
+
+/*footer*/
+.footer {
+    width: 100%;
+    height: 60px;
+    background-color: #F2F2F2;
+    border-top: 1px solid #E4E4E4;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+}
+
+    .footer a:link, .footer a:visited {
+        font-size: 0.9em;
+        color: #666;
+        line-height: 15px;
+        padding: 5px 0px;
+        text-decoration: underline;
+    }
+
+    .footer a:hover, .footer a:active, .footer a.selected {
+        color: #E80033;
+        text-decoration: none;
+    }
+
+    .footer p {
+        font-size: 0.9em;
+        color: #666;
+        line-height: 15px;
+        padding: 5px 0px;
+    }
+
+    .footer .dow-securityclassification {
+        font-size: 1em;
+        height: 20px;
+        text-align: right;
+        padding: 5px 5px 5px 0px;
+    }
+
+    .footer .dow-copyright {
+        font-size: 0.8em;
+        text-align: right;
+        line-height: 15px;
+        padding-right: 5px;
+    }
+
+/*end of footer*/
+
+
+/* Responsive 110 + 280 + 15*2 */
+@media (max-width: 420px) {
+    /* min size to show search box*/
+    .navbar .sitetitle {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    #navbar {
+        background-color: #FFF;
+        border-bottom: 2px solid #E4E4E4;
+    }
+
+        #navbar .navbar-nav > li > a {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+        color: #E80033;
+        background-color: #FFF;
+        border-bottom: 3px solid #E80033;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-logo {
+        border-bottom: 2px solid #E4E4E4;
+    }
+
+    .navbar .searchbox {
+        display: none;
+    }
+
+    .navbar-nav {
+        margin: 7.5px 0px 0px;
+    }
+
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+        color: #FFF;
+        background-color: #E80033;
+    }
+
+    body > .content {
+        padding: 82px 15px 15px;
+    }
+
+}
+
+/* Off Canvas */
+@media screen and (max-width: 767px) {
+    .row-offcanvas {
+        position: relative;
+        -webkit-transition: all .25s ease-out;
+        -o-transition: all .25s ease-out;
+        transition: all .25s ease-out;
+    }
+
+    .row-offcanvas-right {
+        right: 0;
+    }
+
+    .row-offcanvas-left {
+        left: 0;
+    }
+
+    .row-offcanvas-right .sidebar-offcanvas {
+        right: -50%; /* 6 columns */
+    }
+
+    .row-offcanvas-left .sidebar-offcanvas {
+        left: -50%; /* 6 columns */
+    }
+
+    .row-offcanvas-right.active {
+        right: 50%; /* 6 columns */
+    }
+
+    .row-offcanvas-left.active {
+        left: 50%; /* 6 columns */
+    }
+
+    .sidebar-offcanvas {
+        position: absolute;
+        top: 0;
+        width: 50%; /* 6 columns */
+    }
+}

@@ -1,0 +1,90 @@
+﻿@{
+    var title = System.Configuration.ConfigurationManager.AppSettings["WebSiteTitle"] == null ? "SSD Intranet" : System.Configuration.ConfigurationManager.AppSettings["WebSiteTitle"];
+}
+
+<style>
+    .setSelectedMenu {
+        border-bottom: 3px solid #E80033;
+    }
+</style>
+
+<script>
+$(document).ready(function () {
+        //remove classes for all Action Links
+        $("a").removeClass("active");
+        //For each hyperlink under class "navbar-nav"
+        $(".navbar-nav a").each(function () {
+            var linkPath = String($(this).attr('href'));
+            var linkID = $(this).attr('id');
+            //Compare and check the current path. If the link in URL equals to the link for hyperlink, make it is actived
+            if (location.pathname == "/" || location.pathname == "/Home/" || location.pathname == "/Home/index") {
+                //Default page
+                document.getElementById("HomeID").className = "setSelectedMenu";
+            }
+            else if (location.pathname.indexOf("Admin") > 0)
+            {
+                document.getElementById("AdminID").className = "setSelectedMenu";
+            }
+        });
+    });
+</script>
+
+
+<header class="dow-header">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-logo">
+                <div class="logo pull-left">
+                    <!--<a href="http://dowhome.intranet.dow.com/" title="Dow Intranet Home" target="_blank" />-->
+                </div>
+                <div class="sitetitle pull-left" style="font-size: 16px; width: 500px">
+                    <p>SSD Intranet</p>
+                </div>
+                <div class="searchbox pull-right">
+                    <form name="intrasearchform" action="http://search.intranet.dow.com/pages/results.aspx" class="pull-right" method="get" target="_top">
+                        <input id="searchTerms" name="k" maxlength="100" class="pull-left" value="Dow Keyword or Search the Intranet" onfocus="javascript:var k = document.getElementById('searchTerms'); if (k.value == 'Dow Keyword or Search the Intranet') { k.value = ''; }" onblur="javascript:var k = document.getElementById('searchTerms'); if (k.value == '') { k.value = 'Dow Keyword or Search the Intranet'; }">
+                        <a id="searchIntranet" href="#" title="Search" class="pull-left" onclick="var k = document.getElementById('searchTerms'); if (k.value == 'Dow Keyword or Search the Intranet') { k.focus(); return false; } document.intrasearchform.submit();"></a>
+                    </form>
+                    <span class="pull-right">
+                        <a href="http://search.intranet.dow.com/" title="Search Center" target="_top">Search Center</a><br>
+                        <a href="https://search.intranet.dow.com/Pages/Help.aspx" title="Help" target="_top">Help</a> |
+                        <a href="https://search.intranet.dow.com/Pages/FAQ.aspx" title="Help" target="_top">FAQ</a>
+                    </span>
+                </div>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a id="HomeID" href="../Home/index" class="active">Home</a></li>
+                    <li class="dropdown" data-admin-menu>
+                        <a id="AdminID" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <!-- Dropdown Header -->
+                            <li class="dropdown-header">Minor Entities</li>
+                            <li class="divider" />
+                            <li><a href="../Admin/index">&nbsp;&nbsp;Index Home</a></li>
+                            <!-- Divide Line -->
+                            <li class="divider" />
+                            <li class="dropdown-header">Major Entities</li>
+                            <li class="divider" />
+                            <li><a href="../Admin/index">&nbsp;&nbsp;Index Home</a></li>
+                            <li class="divider" />
+                            <li class="dropdown-header">Connector Entities</li>
+                            <li class="divider" />
+                            <li><a href="../Admin/index">&nbsp;&nbsp;Index Home</a></li>
+                            <li class="divider" />
+                            <li class="dropdown-header">Users & Subscriptions</li>
+                            <li class="divider" />
+                            <li><a href="../Admin/index">&nbsp;&nbsp;Index Home</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

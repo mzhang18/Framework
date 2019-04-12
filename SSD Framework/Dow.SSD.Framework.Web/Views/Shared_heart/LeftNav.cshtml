@@ -1,0 +1,56 @@
+﻿<div class="lmenu">
+    <ul>
+        <li>
+            @Html.ActionLink("Reqeust List", "Index", "APACRequest", null, new { @title = "Request List" })
+        </li>
+        <li>
+            @Html.ActionLink("Ticket List", "Index", "Ticket", null, new { @title = "Ticket List" })
+        </li>
+        <li>
+            @Html.ActionLink("User List", "Index", "User", null, new { @title = "User List" })
+        </li>
+        <li>
+            @Html.ActionLink("Search Request", "SearchRequest", "Request", null, new { @title="Search Request"})
+        </li>
+        <li>
+            @Html.ActionLink("Time Zone Setting", "SetTimeZone", "TimeZone", null, new { @title = "Search Request" })
+        </li>
+        <li>
+            @Html.ActionLink("Maintenance", "Index", "Home", null, new { @title = "Maintenance" })
+            <ul>
+                <li>
+                    @Html.ActionLink("Towers / 2nd Level Depts", "Index", "Home", null, new { @title = "Towers / 2nd Level Depts" })
+                </li>
+                <li>
+                    @Html.ActionLink("Job descriptions", "Index", "Home", null, new { @title = "Job descriptions" })
+                </li>
+                <li>
+                    @Html.ActionLink("Teams / Departments", "Index", "Home", null, new { @title = "Teams / Departments" })
+                </li>
+                <li>
+                    @Html.ActionLink("Job families", "Index", "Home", null, new { @title = "Job families" })
+                </li>
+                <li>
+                    @Html.ActionLink("Suppliers", "Index", "Home", null, new { @title = "Suppliers" })
+                </li>         
+            </ul>
+        </li>
+        @*<li>
+            @Html.ActionLink("Menu Module", "Index", "Home", null, new { @title = "Menu Module" })
+        </li>
+        <li>
+            @Html.ActionLink("Menu Module", "Index", "Home", null, new { @title = "Menu Module" })
+        </li>
+        <li>
+            @Html.ActionLink("Menu Module", "Index", "Home", null, new { @title = "Menu Module" })
+        </li>
+        <li>
+            @Html.ActionLink("Menu Module", "Index", "Home", null, new { @title = "Menu Module" })
+        </li>
+        *@
+    </ul>
+    @{
+        var keyword = System.Configuration.ConfigurationManager.AppSettings["Keyword"] == null ? "[EUD Intranet]" : System.Configuration.ConfigurationManager.AppSettings["Keyword"];
+    }
+    <p class="keyword">Keyword: @keyword</p>
+</div>

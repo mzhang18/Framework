@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="GENERATOR" content="Microsoft ASP.NET MVC 4.0" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title - EUD Intranet</title>
+    <link href="~/Content/Branding/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    @Styles.Render("~/Content/Branding/bootstrap/dist/css/bootstrap.min.css?v=v3.3.4",
+        "~/Content/Branding/styles/dowintranet.min.css?v=1.0.0",
+        "~/Content/themes/base/jquery.ui.all.css")
+@Scripts.Render("~/Content/Branding/scripts/jquery-1.11.3.min.js",
+        "~/Content/Branding/scripts/jquery-migrate-1.2.1.min.js",
+        "~/Content/Branding/bootstrap/dist/js/bootstrap.min.js?v=3.1.1",
+        "~/Content/Branding/bootstrap/dist/js/ie10-viewport-bug-workaround.js")
+@Scripts.Render("~/Scripts/jquery-1.8.2.min.js",
+                    "~/Scripts/jquery-ui-1.8.24.min.js",
+                    "~/Scripts/jquery.validate.min.js",
+                    "~/Scripts/jquery.validate.unobtrusive.min.js")
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+@Scripts.Render("~/Content/Branding/scripts/html5shiv.min.js?v=3.7.2",
+    "~/Content/Branding/scripts/respond.min.js?v=1.4.2")<![endif]-->
+
+
+    <script>
+        function ButtonClick(formID, action) {
+            var form = document.forms[formID];
+            form.action = action;
+            form.submit();
+        }
+    </script>
+</head>
+<body>
+    @Html.Partial("~/Views/Shared/Header.cshtml")
+    @Html.Partial("~/Views/Shared/TopNav.cshtml")
+    <div class="container dow-content">
+        <div>
+            <div>
+                @RenderSection("featured", required: false)@RenderBody()
+            </div>
+        </div>
+    </div>
+    @Html.Partial("~/Views/Shared/Footer.cshtml")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

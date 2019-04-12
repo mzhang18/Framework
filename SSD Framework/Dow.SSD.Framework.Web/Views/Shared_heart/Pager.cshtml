@@ -1,0 +1,55 @@
+﻿<script>
+    $(document).ready(function () {
+        $("#BTNJumpTo").click(function () {
+            var templateURL = "@Url.Action(Request.RequestContext.RouteData.Values["action"].ToString(),new { page = 1 })";
+            var toPage = $("#TBJumpTo").val();
+            var beforePage = templateURL.substring(templateURL.indexOf("Page/") + 1);
+            var toURL = beforePage + "/" + toPage;
+            window.location.href = toURL;
+        })
+    })
+</script>
+@if (ViewBag.TotalCount == null)
+{
+    throw new NullReferenceException("Please set ViewBag.TotalCount while using the Pager partial view");
+}
+else
+{
+    Styles.Render("~/Content/default.css?v=" + System.DateTime.Now.ToString());
+    var currentPage = 1;
+    if (ViewContext.RouteData.Values["Page"] != null)
+    {
+        currentPage = Convert.ToInt32(ViewContext.RouteData.Values["Page"]);
+    }
+    if (currentPage != 1)
+    {
+        @Html.ActionLink("First Page", Request.RequestContext.RouteData.Values["action"].ToString(), new { page = 1, sortby = Request.QueryString["sortby"] }, new { @class = "myPagerLine myPagerBlock" })
+        @Html.ActionLink("Previous Page", Request.RequestContext.RouteData.Values["action"].ToString(), new { page = currentPage - 1, sortby = Request.QueryString["sortby"] }, new { @class = "myPagerLine myPagerBlock" })
+    }
+    else
+    {
+        <span class="myPagerLine myPagerBlock">First Page</span><span class="myPagerLine myPagerBlock">Previous Page</span>
+    }
+
+    double pageSize = 20;
+    if (ViewBag.PageSize != null)
+    {
+        pageSize = ViewBag.PageSize;
+    }
+    var pageCount = Math.Ceiling((double)ViewBag.TotalCount / pageSize);
+
+    <span class="myPagerLine">@((currentPage - 1) * pageSize + 1)-@(currentPage * pageSize >= ViewBag.TotalCount ? ViewBag.TotalCount : (currentPage * pageSize))</span>
+
+    if (currentPage != pageCount)
+    {
+        @Html.ActionLink("Next Page", Request.RequestContext.RouteData.Values["action"].ToString(), new { page = currentPage + 1,sortby=Request.QueryString["sortby"] }, new { @class = "myPagerLine myPagerBlock" })
+        @Html.ActionLink("Last Page", Request.RequestContext.RouteData.Values["action"].ToString(), new { page = pageCount, sortby = Request.QueryString["sortby"] }, new { @class = "myPagerLine myPagerBlock" })
+    }
+    else
+    {
+        <span class="myPagerLine myPagerBlock">Next Page</span><span class="myPagerLine myPagerBlock">Last Page</span>
+    }
+    <span class="myPagerLine">@(Request.RequestContext.RouteData.Values["page"] == null ? "1" : Request.RequestContext.RouteData.Values["page"])/@pageCount</span>
+    <div><input class="myPagerLine myPagerBlock" type="text" id="TBJumpTo" name="JumpTo" /><input class="myPagerLine myPagerBlock" type="button" id="BTNJumpTo" value="Jump To" /></div>
+
+}

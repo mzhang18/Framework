@@ -1,0 +1,35 @@
+﻿@{
+    var title = System.Configuration.ConfigurationManager.AppSettings["WebSiteTitle"] == null ? "EUD Intranet" : System.Configuration.ConfigurationManager.AppSettings["WebSiteTitle"];
+}
+<header class="dow-header">
+    <div class="container">
+        <div class="row topheader">
+            <div class="logo pull-left">
+                <a href="http://dowhome.intranet.dow.com/" title="Dow Intranet Home" target="_blank" />
+            </div>
+            <div class="pull-right">
+                <p class="sitetitle">@title</p>
+            </div>
+        </div>
+        <div class="row subheader">
+            <div class="mainlinks" style="height:33px" >
+                <a href="http://dowhome.intranet.dow.com/" title="Intranet Home">Intranet Home</a><br />
+            </div>
+            <div class="tagline">
+                <div class="sitedesc pull-left" >
+                    <p>@title</p>
+                </div>
+                <div class="searchbox pull-right">
+                    <form name="intrasearchform" action="http://search.intranet.dow.com/pages/results.aspx" class="pull-right" method="get" target="_top">
+                        <input id="searchTerms" name="k" maxlength="100" class="pull-left" value="Dow Keyword or Search the Intranet" onclick="javascript:var k = document.getElementById('searchTerms'); if (k.value == 'Dow Keyword or Search the Intranet') { k.value = ''; }" onfocus="javascript:var k = document.getElementById('searchTerms'); if (k.value == 'Dow Keyword or Search the Intranet') { k.value = ''; }" onblur="javascript:var k = document.getElementById('searchTerms'); if (k.value == '') { k.value = 'Dow Keyword or Search the Intranet'; }">
+                        <a id="searchIntranet" href="#" title="Search" class="pull-left" onclick="javascript:var k = document.getElementById('searchTerms'); if (k.value == 'Dow Keyword or Search the Intranet') { k.focus(); return false; } document.intrasearchform.submit();"></a>
+                    </form>
+                    <span class="pull-right">
+                        <a href="http://search.intranet.dow.com/" title="Search Center" target="_top">Search Center</a><br>
+                        <a href="https://search.intranet.dow.com/Pages/FAQ.aspx" title="Help/FAQ" target="_top">Help/FAQ</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

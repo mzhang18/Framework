@@ -1,0 +1,29 @@
+﻿ /* CSS Style for Telerik Grid */
+.k-header {
+    font-weight: 700 !important;
+}
+
+.k-grid td, .k-grid-header th.k-header
+{
+    padding-left:20px;
+}
+
+.k-grid, .k-grid * {
+    border: 1 !important;
+}
+
+/* Background color for the cell in Grid when value below target */
+.critical {
+    background-color: #fdd;
+   
+    /*Show the KPI ball*/
+    /*background-image: url("../../../../Images/greenball.png");
+    background-position: left;
+    background-repeat: no-repeat;*/      
+}
+
+ /* CSS Style for accordion panel*/
+div.panel-heading {
+    background-color:#e80033 !important;
+}
+

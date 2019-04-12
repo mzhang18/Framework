@@ -1,0 +1,38 @@
+﻿
+@*<script src="~/Scripts/Customization/SetActiveNodeOnLefNav.js"></script>*@
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //remove classes for all Action Links
+        $("a").removeClass("active");
+        //For each hyperlink under class "list-group navbar-nav"
+        $(".list-group.navbar-nav a").each(function () {
+            var linkPath = String($(this).attr('href'));
+            var linkID = $(this).attr('id');
+
+            //Compare and check the current path. If the link in URL equals to the link for hyperlink, make it is actived
+            if (location.pathname == "/" || location.pathname == "/Home/") {
+                //Default page
+                document.getElementById("Home").className = "list-group-item active";
+            }
+            else {
+                if (linkPath.indexOf(location.pathname) >= 0) {
+                    document.getElementById(linkID).className = "list-group-item active";
+                }
+            }
+        });
+    });
+
+</script>
+
+<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+    <div class="list-group navbar-nav">
+        @*<a href="" class="list-group-item active">Overview</a>
+            <a href="~/HtmlDemo/About.html" class="list-group-item">Reports</a>
+            <a href="#" class="list-group-item">Analytics</a>
+            <a href="#" class="list-group-item">Export</a>
+            <a href="#" class="list-group-item">Nav Item</a>*@
+
+        @Html.ActionLink("Home", "Index", "Home", new { @class = "list-group-item", id = "Home" })   
+    </div>
+</div>

@@ -1,0 +1,626 @@
+﻿/*-------------------------------------------------
+  intranet theme extention to support multi devices
+  ------------------------------------------------*/
+@font-face {
+    font-family: 'DowScript-Regular';
+    src: url('../Fonts/DowScript-Regular.eot');
+    src: url('../Fonts/DowScript-Regular.eot?#iefix') format('embedded-opentype'), url('../Fonts/DowScript-Regular.woff') format('woff'), url('../Fonts/DowScript-Regular.ttf') format('truetype'), url('../Fonts/DowScript-Regular.svg#DowScript-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: normal;
+    background: none !important;
+    margin-bottom: 100px;
+}
+
+p {
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+    a img {
+        border: none;
+    }
+
+    a, a:link, a:visited {
+        color: #666;
+        text-decoration: none;
+    }
+
+        a:hover, a:active, a.actived {
+            color: #E80033;
+            text-decoration: underline;
+        }
+
+        a.actived {
+            font-size: 12px;
+            font-weight: normal;
+            line-height: 30px;
+            margin-left: 5px;
+        }
+
+        a.red:link, a.red:visited {
+            color: #E80033;
+        }
+
+input, input:focus {
+    outline: none;
+}
+
+    .button, button{
+        color: #E80033;
+        border: none;
+        background-color: #EDEDED;
+        padding: 6px 12px;
+        cursor: pointer;
+    }
+
+        /*.button:hover, button:hover, input[type=submit]:hover {
+            color: #FFF;
+            background-color: #e80033;
+            background-image: url('../images/layout/formButton-hvr.jpg');
+            background-position: center center;
+            background-repeat: repeat-x;
+        }*/
+
+        .button.disabled, button.disabled, input[type=submit].disabled {
+            color: #A0A0A0 !important;
+            text-shadow: 1px 1px 1px #FFFFFF;
+            background-color: #EDEDED !important;
+            background-image: none !important;
+        }
+
+input, textarea, select {
+    color:black;
+    border: none;
+    background-color: #EDEDED;
+    margin: 5px 0;
+    padding: 6px;
+    position: relative;
+    display: inline-block;
+}
+
+select {
+    padding: 4px;
+}
+
+input[type=radio], input[type=checkbox] {
+    background-color: transparent;
+}
+
+.a-button {
+    color: #E80033 !important;
+    background-color: #EDEDED;
+    margin-left: 5px;
+    padding: 6px 12px;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+    .a-button:hover {
+        color: #fff !important;
+        background-image: url('../images/layout/formButton-hvr.jpg');
+        background-position: center center;
+        background-repeat: repeat-x;
+    }
+
+    .a-button.disabled {
+        color: #A0A0A0 !important;
+        text-shadow: 1px 1px 1px #FFFFFF;
+        background-image: none !important;
+        cursor: default;
+    }
+
+.loader {
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    background: url(../images/layout/loader.gif) 50% 50% no-repeat;
+}
+
+.pagepath {
+    position: relative;
+    float: left;
+    width: 100%;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666;
+    border-bottom: 1px solid #B3B3B3;
+    margin: 0 0 10px;
+    padding: 0 0 5px;
+}
+
+    .pagepath a, .pagepath a:link, .pagepath a:visited {
+        color: #666;
+        text-decoration: none;
+    }
+
+        .pagepath a:hover, .pagepath a:active {
+            color: #E80033;
+            text-decoration: none;
+        }
+
+    .pagepath .current {
+        color: rgb(0, 0, 0) !important;
+        text-decoration: none;
+    }
+
+.contentBody .required, .contentBody .error {
+    color: #e80033;
+}
+
+.contentBody > p {
+    padding-bottom: 20px;
+}
+
+.contentBody > .dataview {
+    min-height: 100px;
+}
+
+.dataview .datalist {
+    padding: 0px;
+}
+
+    .dataview .datalist tr:hover {
+        background-color: #eee;
+    }
+
+    .dataview .datalist tr td {
+        border-bottom: 1px dotted #999;
+        padding: 0px 5px;
+    }
+
+    .dataview .datalist td.tdtitle {
+        padding: 8px 5px;
+    }
+
+        .dataview .datalist td.tdtitle a:link, .dataview .datalist td.tdtitle a:visited {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .dataview .datalist td.tdtitle a:hover, .dataview .datalist td.tdtitle a:active {
+            color: #e80033;
+        }
+
+    .dataview .datalist td.tddate {
+        width: 125px;
+        font-style: italic;
+        color: #666;
+        text-align: right;
+        cursor: default;
+    }
+
+    .dataview .datalist td.tdaction {
+        width: 80px;
+        padding-right: 0px;
+    }
+
+
+.dataview .pager {
+    width: 100%;
+    margin: 0px;
+    padding: 10px 0px 0px;
+    clear: both;
+}
+
+    .dataview .pager span {
+        color: #666;
+        margin: 0px 0px 0px 4px;
+        padding: 0px;
+        float: left;
+    }
+
+    .dataview .pager .a-button {
+        float: right;
+    }
+
+.dataview .process {
+    min-width: 26px;
+    min-height: 26px;
+    line-height: 26px;
+    background: url(../images/loading.gif) 10px 50% no-repeat;
+    padding-left: 30px;
+    float: left;
+    display: none;
+}
+
+.dataview .desc {
+    padding-bottom: 10px;
+}
+
+.dataview .form-table {
+    width: 100%;
+}
+
+.form-table tr.tr-error {
+}
+
+.form-table td {
+    padding-right: 10px;
+}
+
+    .form-table td.td-title {
+        width: 40%;
+        text-align: right;
+        vertical-align: top;
+        padding-top: 10px;
+    }
+
+        .form-table td.td-title > span {
+            font-size: 90%;
+        }
+
+    .form-table td.td-content {
+        text-align: left;
+        vertical-align: top;
+        padding-top: 10px;
+    }
+
+    .form-table td.td-line {
+        border-bottom: 1px solid #ccc;
+    }
+
+    .form-table td.tr-button {
+        padding-top: 20px;
+        text-align: center;
+    }
+
+        .form-table td.tr-button > div {
+            display: inline-block;
+        }
+
+        .form-table td.tr-button button {
+            margin-left: 10px;
+        }
+
+    .form-table td.td-info {
+        padding-top: 5px;
+    }
+
+    .form-table td.td-checkbox {
+        padding-top: 7px;
+    }
+
+.form-table input, .form-table textarea {
+    width: 80%;
+    resize: vertical;
+}
+
+    .form-table input[type=checkbox] {
+        width: auto;
+    }
+
+.form-table td .processbar {
+    padding-bottom: 10px;
+    display: none;
+}
+
+/* header */
+.dow-header {
+    width: 100%;
+    height: 140px;
+    text-align: center;
+    background-image: url('../images/DowHeader_back.jpg');
+    background-repeat: repeat-x;
+    background-position: center 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+    .dow-header > .container {
+        padding-top: 10px;
+    }
+
+    .dow-header .topheader {
+        margin: 0px;
+    }
+
+    .dow-header .logo {
+        width: 245px;
+        height: 117px;
+        background-image: url('../images/DowHeader_logo.jpg');
+        background-repeat: no-repeat;
+        background-position: top left;
+    }
+
+        .dow-header .logo a {
+            width: 94px;
+            height: 35px;
+            float: left;
+            position: relative;
+            top: 8px;
+            display: inline-block;
+        }
+
+    .dow-header .sitetitle {
+        font-weight: 700;
+        font-size: 24px;
+        max-width: 492px;
+        max-height: 60px;
+        color: #E80033;
+        line-height: 60px;
+        text-align: right;
+        overflow: hidden;
+        display: block;
+    }
+
+    .dow-header .subheader {
+        margin: 0px 0px 0px 240px;
+        position: relative;
+        top: -26px;
+    }
+
+        .dow-header .subheader .mainlinks {
+            width: 200px;
+            border-bottom: 1px solid #b3b3b3;
+            padding-bottom: 5px;
+            text-align: left;
+            position: absolute;
+            left: -240px;
+            top: 5px;
+        }
+
+        .dow-header .subheader .tagline {
+            width: 100%;
+            height: 39px;
+            border-bottom: 1px solid #b3b3b3;
+            display: inline-block;
+        }
+
+    .dow-header .sitedesc {
+        display: none;
+    }
+
+        .dow-header .sitedesc > p {
+            max-width: 550px;
+            max-height: 35px;
+            font-family: 'DowScript-Regular',Arial,sans-serif;
+            font-size: 1.6em;
+            line-height: 35px;
+            text-align: left;
+            padding-left: 10px;
+            overflow: hidden;
+        }
+
+    .dow-header .searchbox {
+        width: 330px;
+        padding-top: 5px;
+        text-align: right;
+        display: block;
+    }
+
+        .dow-header .searchbox > span {
+            font-size: 8pt;
+            line-height: 12px;
+            text-align: right;
+        }
+
+            .dow-header .searchbox > span a {
+                color: #000;
+                text-decoration: underline;
+            }
+
+        .dow-header .searchbox > form {
+            height: 25px;
+            display: inline-block;
+        }
+
+        .dow-header .searchbox input {
+            width: 210px;
+            height: 25px;
+            font-size: 11px;
+            color: #666;
+            border: none;
+            margin: 0px 5px;
+            padding: 6px;
+            display: inline-block;
+        }
+
+        .dow-header .searchbox #searchIntranet {
+            width: 25px;
+            height: 25px;
+            background-image: url('../images/buttons/searchIntranet.jpg');
+            background-position: center 0;
+            background-repeat: no-repeat;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+            .dow-header .searchbox #searchIntranet:hover {
+                background-position: center -25px;
+            }
+
+/* content */
+.dow-content {
+    padding-bottom: 15px;
+}
+
+    .dow-content > .row {
+        margin: 0px 0px 0px 240px;
+        position: relative;
+    }
+
+    .dow-content .dow-leftnav {
+        width: 200px;
+        text-align: left;
+        position: absolute;
+        left: -240px;
+        top: 0px;
+    }
+
+.dow-leftnav .lmenu {
+    width: 100%;
+    float: none;
+    position: relative;
+    display: inline-block;
+}
+
+    .dow-leftnav .lmenu ul {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        float: left;
+        position: relative;
+    }
+
+        .dow-leftnav .lmenu ul li {
+            width: 200px;
+            display: inline-block;
+        }
+
+            .dow-leftnav .lmenu ul li a, .dow-leftnav .lmenu ul li a:link, .dow-leftnav .lmenu ul li a:visited, .dow-leftnav .lmenu ul li a.selected {
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 20px;
+                color: #666;
+                padding: 0;
+                text-decoration: none;
+                display: inline-block;
+                word-break: break-all;
+            }
+
+                .dow-leftnav .lmenu ul li a:hover, .dow-leftnav .lmenu ul lia:active {
+                    color: rgb(232, 0, 51);
+                }
+
+        .dow-leftnav .lmenu ul ul li a {
+            font-size: 12px !important;
+            font-weight: normal !important;
+            margin-left: 20px;
+        }
+
+    .dow-leftnav .lmenu .keyword {
+        font-size: 13px;
+        font-weight: normal;
+        width: 195px;
+        color: #666;
+        border-top: #b3b3b3 1px solid;
+        margin-top: 20px;
+        padding-top: 5px;
+        clear: both;
+        display: inline-block;
+    }
+
+.dow-content .dow-main {
+    width: 100%;
+    min-height: 160px; /*equal height of left menu*/
+    display: inline-block;
+}
+
+    .dow-content .dow-main h2.contentTitle {
+        font-size: 20px;
+        font-weight: 700;
+        color: #000;
+        line-height: 24px;
+        border-bottom: #000 6px solid;
+        margin: 0px 0px 10px;
+        padding: 0px 0px 5px;
+        clear: both;
+        cursor: default;
+    }
+
+    .dow-content .dow-main .contentBody {
+        clear: both;
+        float: none;
+    }
+
+/* footer */
+.dow-footer {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    border-top: 5px solid #E80033;
+    margin: 0px;
+    padding: 10px 0px 0px;
+    position: absolute;
+    bottom: 0;
+}
+
+    .dow-footer p {
+        font-size: 10px;
+        color: #666;
+        line-height: normal;
+        margin: 0px;
+    }
+
+    .dow-footer a:link, .dow-footer a:visited {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .dow-footer a:hover, .dow-footer a:active {
+        color: #E80033;
+    }
+
+/* multi device sizes */
+@media (max-width: 543px) {
+    .dow-content > .row {
+        margin: 0px;
+    }
+
+    .dow-content .dow-leftnav {
+        display: none;
+    }
+}
+
+@media (max-width: 622px) {
+    /* min size to show search box*/
+    .dow-header .searchbox {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .dow-header .sitetitle {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+    .dow-header .sitedesc {
+        display: block;
+    }
+
+        .dow-header .sitedesc p {
+            width: 350px;
+        }
+}
+
+@media (min-width: 1200px) {
+    .dow-header .sitedesc {
+        display: block;
+    }
+}
+
+.menu li a {
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#666;
+    font-size:small;
+    line-height:17px;
+    text-decoration:underline
+}
+.menu li a:hover {
+    color:red
+}
+
+.menu li ul{
+    display:none;
+}

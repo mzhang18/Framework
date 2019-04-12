@@ -1,0 +1,21 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<hgroup class="title">
+    <h1 class="error">Error.</h1>
+    @if(this.ViewBag.ErrorMsg is List<string>)
+    {
+        var messages=ViewBag.ErrorMsg as List<string>;
+        foreach(var msg in messages)
+        {
+            <h6 class="error">@msg</h6>
+        }
+    }
+    else
+    { 
+        <h2 class="error">@this.ViewBag.ErrorMsg</h2>
+    }
+</hgroup>
